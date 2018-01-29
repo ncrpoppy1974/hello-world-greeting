@@ -28,7 +28,7 @@ node('docker') {
   }"""
   server.upload(uploadSpec)
   }
-  stash includes:'target/hello-0.0.1.war,src/pt/Hello_World_Test_Plan.jmx',name: 'binary
+  stash includes:'target/hello-0.0.1.war,src/pt/Hello_World_Test_Plan.jmx',name: 'binary'
 } 
 node('docker_pt') {
   stage ('Start Tomcat'){
