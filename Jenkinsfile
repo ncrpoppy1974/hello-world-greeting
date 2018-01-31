@@ -51,9 +51,9 @@ node('docker_pt') {
 }
 node ('production') {
   stage ('Deploy to Prod'){
-  def server = Artifactory.server 'Default Artifactory Server'
-   def downloadSpec = """{
-    "files": [
+    def server = Artifactory.server 'Default Artifactory Server'
+     def downloadSpec = """{
+      "files": [
       {
       "pattern": "example-project/$BUILD_NUMBER/*.zip"
       "target": "/home/jenkins/tomcat/webapps/"
@@ -63,4 +63,3 @@ node ('production') {
     server.download(downloadSpec)
     }
   }
-      
