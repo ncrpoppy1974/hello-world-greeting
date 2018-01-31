@@ -62,4 +62,4 @@ node ('production') {
     }""
     server.download(downloadSpec)
     }
-  }
+}
