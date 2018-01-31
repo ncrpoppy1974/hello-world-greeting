@@ -21,7 +21,7 @@ node('docker') {
       "files": [
       {
         "pattern": "target/hello-0.0.1.war",
-        "target": "example-project/${BUILD_NUMBER}/", 
+        "target": "example-project/${BUILD_NUMBER}/" 
       }
   ]
   }"""
@@ -55,11 +55,11 @@ node ('production') {
      def downloadSpec = """{
       "files": [
       {
-      "pattern": "example-project/$BUILD_NUMBER/*.zip"
+      "pattern": "example-project/$BUILD_NUMBER/*.zip",
       "target": "/home/jenkins/tomcat/webapps/"
       }
      ]
-    }"""
-    server.download(downloadSpec)
+     }"""
+     server.download(downloadSpec)
     }
 }
